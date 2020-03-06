@@ -2,6 +2,8 @@ package com.yyw.bookExchange.data;
 
 
 public class Result {
+    public static final Result SUCCEED = new Result(0,"");
+
     public Result(int status, String tocken) {
         this.status = status;
         this.tocken = tocken;

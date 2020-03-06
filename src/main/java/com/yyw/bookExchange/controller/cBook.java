@@ -1,6 +1,6 @@
-package com.yyw.bookExchange.Contral;
+package com.yyw.bookExchange.controller;
 
-import com.yyw.bookExchange.Dao.BookDao;
+import com.yyw.bookExchange.dao.BookDao;
 import com.yyw.bookExchange.data.Book;
 import com.yyw.bookExchange.data.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class cBook {
-    @Autowired
-    BookDao dao;
+
+
+    final BookDao dao;
+
+    public cBook(BookDao dao) {
+        this.dao = dao;
+    }
 
     @PostMapping("/book")
     public Result Add(@RequestBody Book b){
@@ -18,7 +23,7 @@ public class cBook {
     }
 
     @DeleteMapping("/book/{id}")
-    public Result Add(@PathVariable Long id){
+    public Result Delete(@PathVariable Long id){
         dao.deleteById(id);
         return new Result(0,"success");
     }

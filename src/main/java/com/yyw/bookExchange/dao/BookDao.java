@@ -1,7 +1,6 @@
-package com.yyw.bookExchange.Dao;
+package com.yyw.bookExchange.dao;
 
 import com.yyw.bookExchange.data.Book;
-import com.yyw.bookExchange.data.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

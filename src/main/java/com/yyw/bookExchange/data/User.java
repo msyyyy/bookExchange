@@ -7,7 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
     public User() {
     }
@@ -59,4 +59,15 @@ public class User {
 
     @Column
     private String password;
+
+    public long getLove() {
+        return love;
+    }
+
+    public void setLove(long love) {
+        this.love = love;
+    }
+
+    @Column
+    private long love;
 }

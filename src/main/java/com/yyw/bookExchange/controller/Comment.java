@@ -3,14 +3,8 @@ package com.yyw.bookExchange.controller;
 
 import com.yyw.bookExchange.dao.CommentDao;
 import com.yyw.bookExchange.dao.ReturnWrap;
-import com.yyw.bookExchange.dao.UserDao;
-import com.yyw.bookExchange.data.Result;
-import com.yyw.bookExchange.data.Text;
-import com.yyw.bookExchange.data.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class Comment {
@@ -23,7 +17,7 @@ public class Comment {
     }
 
     @PostMapping("/comment")
-    public ReturnWrap Create(Text u){
+    public ReturnWrap Create(com.yyw.bookExchange.data.Comment u){
         dao.save(u);
         return ReturnWrap.SUCCEED;
     }
@@ -41,7 +35,7 @@ public class Comment {
     }
 
     @PutMapping("/comment/{id}")
-    public ReturnWrap Update(@PathVariable Long id,@RequestBody Text u){
+    public ReturnWrap Update(@PathVariable Long id,@RequestBody com.yyw.bookExchange.data.Comment u){
         dao.deleteById(id);
         dao.save(u);
         return ReturnWrap.returnWithData(u);

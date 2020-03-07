@@ -1,0 +1,28 @@
+GET http://localhost:8081/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"yyw","password":"123"}
+###
+
+POST http://localhost:8081/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"yyw","password":"123"}
+###
+
+GET http://localhost:8081/login/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+GET http://localhost:8081/user/1/lovebook
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###

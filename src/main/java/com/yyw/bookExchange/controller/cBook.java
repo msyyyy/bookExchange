@@ -1,6 +1,7 @@
 package com.yyw.bookExchange.controller;
 
 import com.yyw.bookExchange.dao.BookDao;
+import com.yyw.bookExchange.dao.ReturnWrap;
 import com.yyw.bookExchange.data.Book;
 import com.yyw.bookExchange.data.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +30,23 @@ public class cBook {
     }
 
     @GetMapping("/book/{id}")
-    public Book Get(  @PathVariable Long id){
+    public Book Get(@PathVariable Long id){
         return dao.findById(id).get();
     }
 
     @PutMapping("/book")
     public Result Modify(@RequestBody Book b){
-     //   dao.
+        dao.deleteById(b.getPid());
+        dao.save(b);
         return new Result(0,"success");
     }
 
+    @PutMapping("/book/{id}/loveadd")
+    public ReturnWrap Modify(@PathVariable long id){
+        Book b = dao.getOne(id);
+        b.setLove(b.getLove()+1);
+        dao.deleteById(id);
+        dao.save(b);
+        return ReturnWrap.SUCCEED;
+    }
 }

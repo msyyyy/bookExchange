@@ -15,9 +15,19 @@ public class Book {
     @Column
     String details;
     @Column
-    String love;
+    int love;
     @Column
     String save;
+    @Column
+    String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Long getPid() {
         return pid;
@@ -51,11 +61,12 @@ public class Book {
         this.details = details;
     }
 
-    public String getLove() {
+
+    public int getLove() {
         return love;
     }
 
-    public void setLove(String love) {
+    public void setLove(int love) {
         this.love = love;
     }
 

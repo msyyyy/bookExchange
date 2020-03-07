@@ -22,7 +22,7 @@ public class Login {
         this.dao = dao;
     }
 
-    @PutMapping("/login")
+    @GetMapping("/login")
     public Result Login(@RequestBody User u){
         List<User> u1 = dao.findAll();
         for (User user : u1) {
@@ -39,14 +39,21 @@ public class Login {
         return new Result(0,"succeed");
     }
 
-    @GetMapping("/login")
-    public List<User> Get(){
-       return dao.findAll();
+    @GetMapping("/login/{id}")
+    public User Get(@PathVariable Long id){
+       return dao.findById(id).get();
     }
 
     @DeleteMapping("/login/{id}")
     public Result Delete(@PathVariable Long id){
         dao.deleteById(id);
+        return new Result(0,"succeed");
+    }
+
+    @PutMapping("/login/{id}")
+    public Result Delete(@PathVariable Long id,@RequestBody User u){
+        dao.deleteById(id);
+        dao.save(u);
         return new Result(0,"succeed");
     }
 

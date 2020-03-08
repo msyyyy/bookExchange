@@ -4,12 +4,16 @@ import com.yyw.bookExchange.dao.BookDao;
 import com.yyw.bookExchange.dao.ReturnWrap;
 import com.yyw.bookExchange.data.Book;
 import com.yyw.bookExchange.data.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+/**
+ * book service
+ * @author frank
+ *
+ * */
 
 @RestController
 public class cBook {
-
 
     final BookDao dao;
 
@@ -31,7 +35,7 @@ public class cBook {
 
     @GetMapping("/book/{id}")
     public Book Get(@PathVariable Long id){
-        return dao.findById(id).get();
+        return dao.getOne(id);
     }
 
     @PutMapping("/book")

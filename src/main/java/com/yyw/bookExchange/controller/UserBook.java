@@ -5,10 +5,10 @@ import com.yyw.bookExchange.dao.BookDao;
 import com.yyw.bookExchange.dao.ReturnWrap;
 import com.yyw.bookExchange.dao.UserDao;
 import com.yyw.bookExchange.data.Book;
-import com.yyw.bookExchange.data.Result;
-import com.yyw.bookExchange.data.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +16,15 @@ import java.util.List;
 @RestController
 public class UserBook {
 
-    @Autowired
-    UserDao dao;
+    private final UserDao dao;
+
+    private final BookDao bdao;
 
     @Autowired
-    BookDao bdao;
+    public UserBook(UserDao dao, BookDao bdao) {
+        this.dao = dao;
+        this.bdao = bdao;
+    }
 
     @GetMapping("/user/{id}/lovebook")
     public ReturnWrap GetLoveBook(@PathVariable long id){

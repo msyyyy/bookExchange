@@ -9,7 +9,6 @@ public class ReturnWrap {
 
     int code;
 
-
     public ReturnWrap(int code, String error, Object data) {
         this.code = code;
         this.error = error;

@@ -1,10 +1,15 @@
 package com.yyw.bookExchange.controller;
 
 import com.yyw.bookExchange.dao.BookDao;
+import com.yyw.bookExchange.dao.CommentDao;
 import com.yyw.bookExchange.dao.ReturnWrap;
 import com.yyw.bookExchange.data.Book;
+import com.yyw.bookExchange.data.Comment;
 import com.yyw.bookExchange.data.Result;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * book service
@@ -13,12 +18,14 @@ import org.springframework.web.bind.annotation.*;
  * */
 
 @RestController
-public class cBook {
+public class CBook {
 
-    final BookDao dao;
+    private final BookDao dao;
+    private final CommentDao cdao;
 
-    public cBook(BookDao dao) {
+    public CBook(BookDao dao, CommentDao cdao) {
         this.dao = dao;
+        this.cdao = cdao;
     }
 
     @PostMapping("/book")
@@ -52,5 +59,12 @@ public class cBook {
         dao.deleteById(id);
         dao.save(b);
         return ReturnWrap.SUCCEED;
+    }
+
+    @GetMapping("/book/{id}/comment")
+    public ReturnWrap GetComment(@PathVariable long id){
+        List<Comment> c =  cdao.findAll();
+        c = c.stream().filter(b -> b.getBookId() == id).collect(Collectors.toList());
+        return ReturnWrap.returnWithData(c);
     }
 }

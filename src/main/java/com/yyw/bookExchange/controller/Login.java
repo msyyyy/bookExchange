@@ -45,7 +45,7 @@ public class Login {
     }
 
     @DeleteMapping("/login/{id}")
-    public Result Delete(@PathVariable Long id){
+    public Result delete(@PathVariable Long id){
         dao.deleteById(id);
         return new Result(0,"succeed");
     }

@@ -1,5 +1,6 @@
 package com.yyw.bookExchange.controller;
 
+import com.yyw.bookExchange.dao.ReturnWrap;
 import com.yyw.bookExchange.dao.UserDao;
 import com.yyw.bookExchange.data.Result;
 import com.yyw.bookExchange.data.User;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @author yyw
+ */
 @RestController
 public class Login {
 
@@ -23,38 +27,38 @@ public class Login {
     }
 
     @GetMapping("/login")
-    public Result Login(@RequestBody User u){
+    public ReturnWrap login(@RequestBody User u){
         List<User> u1 = dao.findAll();
         for (User user : u1) {
             if (u.getPassword().equals(user.getPassword())&&u.getName().equals(user.getName())){
-                return new Result(0,newToken());
+                return ReturnWrap.returnWithData(new Result(0,newToken()));
             }
         }
-        return new Result(-1,"error");
+        return ReturnWrap.errorWithData("login failed!");
     }
 
     @PostMapping("/login")
-    public Result Register(@RequestBody User u){
+    public ReturnWrap register(@RequestBody User u){
         dao.save(u);
-        return new Result(0,"succeed");
+        return ReturnWrap.SUCCEED;
     }
 
     @GetMapping("/login/{id}")
     public User Get(@PathVariable Long id){
-       return dao.findById(id).get();
+       return dao.getOne(id);
     }
 
     @DeleteMapping("/login/{id}")
-    public Result delete(@PathVariable Long id){
+    public ReturnWrap delete(@PathVariable Long id){
         dao.deleteById(id);
-        return new Result(0,"succeed");
+        return ReturnWrap.SUCCEED;
     }
 
     @PutMapping("/login/{id}")
-    public Result Delete(@PathVariable Long id,@RequestBody User u){
+    public ReturnWrap Delete(@PathVariable Long id, @RequestBody User u){
         dao.deleteById(id);
         dao.save(u);
-        return new Result(0,"succeed");
+        return ReturnWrap.SUCCEED;
     }
 
 }

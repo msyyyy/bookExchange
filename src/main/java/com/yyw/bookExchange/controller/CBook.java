@@ -46,10 +46,9 @@ public class CBook {
     }
 
     @PutMapping("/book")
-    public Result Modify(@RequestBody Book b){
-        bookDao.deleteById(b.getPid());
+    public ReturnWrap Modify(@RequestBody Book b){
         bookDao.save(b);
-        return new Result(0,"success");
+        return ReturnWrap.SUCCEED;
     }
 
     @PutMapping("/book/{id}/loveadd")

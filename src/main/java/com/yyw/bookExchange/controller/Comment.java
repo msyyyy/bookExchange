@@ -6,11 +6,14 @@ import com.yyw.bookExchange.dao.ReturnWrap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author yyw
+ */
 @RestController
 public class Comment
 {
 
-    CommentDao dao;
+    final private CommentDao dao;
 
     @Autowired
     public Comment(CommentDao dao) {

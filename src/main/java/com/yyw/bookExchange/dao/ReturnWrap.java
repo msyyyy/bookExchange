@@ -7,6 +7,10 @@ public class ReturnWrap {
         return new ReturnWrap(0,"",o);
     }
 
+    public static ReturnWrap errorWithData(Object o)  {
+        return new ReturnWrap(-1,o.toString(),null);
+    }
+
     int code;
 
     public ReturnWrap(int code, String error, Object data) {

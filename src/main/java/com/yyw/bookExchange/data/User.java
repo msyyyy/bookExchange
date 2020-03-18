@@ -71,10 +71,10 @@ public class User {
     @Column
     private long love;
 
-    @Colmn
+    @Column
     private long notlove;
 
-    @Conmn
+    @Column
     private long save;
 
     public long getNotlove() {

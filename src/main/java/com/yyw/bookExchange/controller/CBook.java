@@ -20,50 +20,66 @@ import java.util.stream.Collectors;
 @RestController
 public class CBook {
 
-    private final BookDao dao;
-    private final CommentDao cdao;
+    private final BookDao bookDao;
+    private final CommentDao commentDao;
 
     public CBook(BookDao dao, CommentDao cdao) {
-        this.dao = dao;
-        this.cdao = cdao;
+        this.bookDao = dao;
+        this.commentDao = cdao;
     }
 
     @PostMapping("/book")
-    public Result Add(@RequestBody Book b){
-        dao.save(b);
-        return new Result(0,"success");
+    public ReturnWrap Add(@RequestBody Book b){
+        bookDao.save(b);
+        return ReturnWrap.SUCCEED;
     }
 
     @DeleteMapping("/book/{id}")
-    public Result Delete(@PathVariable Long id){
-        dao.deleteById(id);
-        return new Result(0,"success");
+    public ReturnWrap Delete(@PathVariable Long id){
+        bookDao.deleteById(id);
+        return ReturnWrap.SUCCEED;
     }
 
     @GetMapping("/book/{id}")
     public Book Get(@PathVariable Long id){
-        return dao.getOne(id);
+        return bookDao.getOne(id);
     }
 
     @PutMapping("/book")
     public Result Modify(@RequestBody Book b){
-        dao.deleteById(b.getPid());
-        dao.save(b);
+        bookDao.deleteById(b.getPid());
+        bookDao.save(b);
         return new Result(0,"success");
     }
 
     @PutMapping("/book/{id}/loveadd")
-    public ReturnWrap Modify(@PathVariable long id){
-        Book b = dao.getOne(id);
+    public ReturnWrap loveAdd(@PathVariable long id){
+        Book b = bookDao.getOne(id);
         b.setLove(b.getLove()+1);
-        dao.deleteById(id);
-        dao.save(b);
+        bookDao.save(b);
+        return ReturnWrap.SUCCEED;
+    }
+
+    @PutMapping("/book/{id}/notloveadd")
+    public ReturnWrap notLoveAdd(@PathVariable long id){
+        Book b = bookDao.getOne(id);
+        b.setNotLove(b.getNotLove()+1);
+        bookDao.save(b);
+        return ReturnWrap.SUCCEED;
+    }
+
+
+    @PutMapping("/book/{id}/saveadd")
+    public ReturnWrap saveAdd(@PathVariable long id){
+        Book b = bookDao.getOne(id);
+        b.setSave(b.getSave()+1);
+        bookDao.save(b);
         return ReturnWrap.SUCCEED;
     }
 
     @GetMapping("/book/{id}/comment")
     public ReturnWrap GetComment(@PathVariable long id){
-        List<Comment> c =  cdao.findAll();
+        List<Comment> c =  commentDao.findAll();
         c = c.stream().filter(b -> b.getBookId() == id).collect(Collectors.toList());
         return ReturnWrap.returnWithData(c);
     }

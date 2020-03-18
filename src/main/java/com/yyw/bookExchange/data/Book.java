@@ -17,9 +17,11 @@ public class Book {
     @Column
     int love;
     @Column
-    String save;
+    int save;
     @Column
     String name;
+    @Column
+    int notLove;
 
     public String getName() {
         return name;
@@ -70,11 +72,19 @@ public class Book {
         this.love = love;
     }
 
-    public String getSave() {
+    public int getNotLove() {
+        return notLove;
+    }
+
+    public void setNotLove(int notLove) {
+        this.notLove = notLove;
+    }
+
+    public int getSave() {
         return save;
     }
 
-    public void setSave(String save) {
+    public void setSave(int save) {
         this.save = save;
     }
 

@@ -52,7 +52,7 @@ public class CBook {
     }
 
     @GetMapping("/books")
-    public ReturnWrap get(){
+    public ReturnWrap<List<Book>> get(){
         return ReturnWrap.returnWithData(bookDao.findAll());
     }
 
@@ -65,7 +65,7 @@ public class CBook {
     }
 
     @PutMapping("/book/{id}/notloveadd")
-    public ReturnWrap notLoveAdd(@PathVariable long id){
+    public ReturnWrap<Void> notLoveAdd(@PathVariable long id){
         Book b = bookDao.getOne(id);
         b.setNotLove(b.getNotLove()+1);
         bookDao.save(b);
@@ -74,7 +74,7 @@ public class CBook {
 
 
     @PutMapping("/book/{id}/saveadd")
-    public ReturnWrap saveAdd(@PathVariable long id){
+    public ReturnWrap<Void> saveAdd(@PathVariable long id){
         Book b = bookDao.getOne(id);
         b.setSave(b.getSave()+1);
         bookDao.save(b);

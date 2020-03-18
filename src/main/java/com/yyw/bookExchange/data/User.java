@@ -70,4 +70,26 @@ public class User {
 
     @Column
     private long love;
+
+    @Colmn
+    private long notlove;
+
+    @Conmn
+    private long save;
+
+    public long getNotlove() {
+        return notlove;
+    }
+
+    public void setNotlove(long notlove) {
+        this.notlove = notlove;
+    }
+
+    public long getSave() {
+        return save;
+    }
+
+    public void setSave(long save) {
+        this.save = save;
+    }
 }

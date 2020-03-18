@@ -36,4 +36,26 @@ public class UserBook {
         }
         return ReturnWrap.returnWithData(b);
     }
+
+    @GetMapping("/user/{id}/notlovebook")
+    public ReturnWrap GetNotLoveBook(@PathVariable long id){
+        long u = dao.getOne(id).getNotlove();
+        List<Integer> l = Binary.getBit(u);
+        List<Book> b = new ArrayList<>();
+        for (Integer integer : l) {
+            b.add(bdao.getOne(integer.longValue()));
+        }
+        return ReturnWrap.returnWithData(b);
+    }
+
+    @GetMapping("/user/{id}/savebook")
+    public ReturnWrap GetSaveBook(@PathVariable long id){
+        long u = dao.getOne(id).getSave();
+        List<Integer> l =  Binary.getBit(u);
+        List<Book> b = new ArrayList<>();
+        for (Integer integer : l) {
+            b.add(bdao.getOne(integer.longValue()));
+        }
+        return ReturnWrap.returnWithData(b);
+    }
 }

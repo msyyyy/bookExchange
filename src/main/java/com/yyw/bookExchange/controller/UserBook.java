@@ -3,7 +3,7 @@ package com.yyw.bookExchange.controller;
 import com.yyw.bookExchange.common.Binary;
 import com.yyw.bookExchange.dao.BookDao;
 import com.yyw.bookExchange.dao.CommentDao;
-import com.yyw.bookExchange.dao.ReturnWrap;
+import com.yyw.bookExchange.data.ReturnWrap;
 import com.yyw.bookExchange.dao.UserDao;
 import com.yyw.bookExchange.data.Book;
 import com.yyw.bookExchange.data.Comment;

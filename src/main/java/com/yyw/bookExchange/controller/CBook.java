@@ -2,10 +2,9 @@ package com.yyw.bookExchange.controller;
 
 import com.yyw.bookExchange.dao.BookDao;
 import com.yyw.bookExchange.dao.CommentDao;
-import com.yyw.bookExchange.dao.ReturnWrap;
+import com.yyw.bookExchange.data.ReturnWrap;
 import com.yyw.bookExchange.data.Book;
 import com.yyw.bookExchange.data.Comment;
-import com.yyw.bookExchange.data.Result;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,30 +28,35 @@ public class CBook {
     }
 
     @PostMapping("/book")
-    public ReturnWrap Add(@RequestBody Book b){
+    public ReturnWrap<Void> add(@RequestBody Book b){
         bookDao.save(b);
         return ReturnWrap.SUCCEED;
     }
 
     @DeleteMapping("/book/{id}")
-    public ReturnWrap Delete(@PathVariable Long id){
+    public ReturnWrap<Void> delete(@PathVariable Long id){
         bookDao.deleteById(id);
         return ReturnWrap.SUCCEED;
     }
 
     @GetMapping("/book/{id}")
-    public Book Get(@PathVariable Long id){
-        return bookDao.getOne(id);
+    public ReturnWrap<Book> get(@PathVariable Long id){
+        return ReturnWrap.returnWithData(bookDao.getOne(id));
     }
 
     @PutMapping("/book")
-    public ReturnWrap Modify(@RequestBody Book b){
+    public ReturnWrap<Void> modify(@RequestBody Book b){
         bookDao.save(b);
         return ReturnWrap.SUCCEED;
     }
 
+    @GetMapping("/books")
+    public ReturnWrap get(){
+        return ReturnWrap.returnWithData(bookDao.findAll());
+    }
+
     @PutMapping("/book/{id}/loveadd")
-    public ReturnWrap loveAdd(@PathVariable long id){
+    public ReturnWrap<Void> loveAdd(@PathVariable long id){
         Book b = bookDao.getOne(id);
         b.setLove(b.getLove()+1);
         bookDao.save(b);

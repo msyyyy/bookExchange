@@ -2,7 +2,7 @@ package com.yyw.bookExchange.controller;
 
 
 import com.yyw.bookExchange.dao.CommentDao;
-import com.yyw.bookExchange.dao.ReturnWrap;
+import com.yyw.bookExchange.data.ReturnWrap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

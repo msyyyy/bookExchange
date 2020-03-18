@@ -1,9 +1,12 @@
 package com.yyw.bookExchange.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "comment")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Comment {
     @Id
     @GeneratedValue

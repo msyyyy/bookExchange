@@ -1,6 +1,9 @@
 package com.yyw.bookExchange.data;
 
 
+/**
+ * @author yyw
+ */
 public class Result {
 
     public Result(int status, String tocken) {

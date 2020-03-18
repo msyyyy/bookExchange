@@ -1,6 +1,6 @@
 package com.yyw.bookExchange.controller;
 
-import com.yyw.bookExchange.dao.ReturnWrap;
+import com.yyw.bookExchange.data.ReturnWrap;
 import com.yyw.bookExchange.dao.UserDao;
 import com.yyw.bookExchange.data.Result;
 import com.yyw.bookExchange.data.User;
@@ -26,7 +26,7 @@ public class Login {
         this.dao = dao;
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ReturnWrap login(@RequestBody User u){
         List<User> u1 = dao.findAll();
         for (User user : u1) {
@@ -37,26 +37,30 @@ public class Login {
         return ReturnWrap.errorWithData("login failed!");
     }
 
-    @PostMapping("/login")
+    @PostMapping("/user")
     public ReturnWrap register(@RequestBody User u){
         dao.save(u);
         return ReturnWrap.SUCCEED;
     }
 
-    @GetMapping("/login/{id}")
-    public User Get(@PathVariable Long id){
-       return dao.getOne(id);
+    @GetMapping("/user/{id}")
+    public ReturnWrap<User> get(@PathVariable Long id){
+       return ReturnWrap.returnWithData(dao.getOne(id));
     }
 
-    @DeleteMapping("/login/{id}")
-    public ReturnWrap delete(@PathVariable Long id){
+    @GetMapping("/users")
+    public ReturnWrap<List<User>> get(){
+        return ReturnWrap.returnWithData(dao.findAll());
+    }
+
+    @DeleteMapping("/user/{id}")
+    public ReturnWrap<Void> delete(@PathVariable Long id){
         dao.deleteById(id);
         return ReturnWrap.SUCCEED;
     }
 
-    @PutMapping("/login/{id}")
-    public ReturnWrap Delete(@PathVariable Long id, @RequestBody User u){
-        dao.deleteById(id);
+    @PutMapping("/user/{id}")
+    public ReturnWrap<Void> modify(@PathVariable Long id, @RequestBody User u){
         dao.save(u);
         return ReturnWrap.SUCCEED;
     }

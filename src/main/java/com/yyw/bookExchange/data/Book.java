@@ -1,8 +1,11 @@
 package com.yyw.bookExchange.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @Table(name = "books")
 public class Book {
     @Id

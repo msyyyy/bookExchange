@@ -21,6 +21,27 @@ public class Comment {
     long userId;
     @Column
     String content;
+    @Column
+    String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public long getParent() {
+        return parent;
+    }
+
+    public void setParent(long parent) {
+        this.parent = parent;
+    }
+
+    @Column
+    long parent;
 
     public long getId() {
         return id;

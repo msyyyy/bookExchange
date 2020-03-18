@@ -1,0 +1,24 @@
+POST http://localhost:8081/user/history
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"userId": 9,"bookId": 10,"time":"15752384810"}
+
+###
+
+GET http://localhost:8081/user/9/historys
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+
+###
+GET http://localhost:8081/user/9/history?offset=0&length=1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+
+

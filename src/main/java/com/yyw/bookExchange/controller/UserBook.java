@@ -43,19 +43,19 @@ public class UserBook {
     }
 
     @GetMapping("/user/{id}/lovebook")
-    public ReturnWrap GetLoveBook(@PathVariable long id){
+    public ReturnWrap<List<Book>> getLoveBook(@PathVariable long id){
         long u = userDao.getOne(id).getLove();
         return ReturnWrap.returnWithData(getBookByCondition(u));
     }
 
     @GetMapping("/user/{id}/notlovebook")
-    public ReturnWrap GetNotLoveBook(@PathVariable long id){
+    public ReturnWrap<List<Book>> getNotLoveBook(@PathVariable long id){
         long u = userDao.getOne(id).getNotlove();
         return ReturnWrap.returnWithData(getBookByCondition(u));
     }
 
     @GetMapping("/user/{id}/savebook")
-    public ReturnWrap getSaveBook(@PathVariable long id){
+    public ReturnWrap<List<Book>> getSaveBook(@PathVariable long id){
         long u = userDao.getOne(id).getSave();
         return ReturnWrap.returnWithData(getBookByCondition(u));
     }

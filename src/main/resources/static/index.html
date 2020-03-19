@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="globe.js">
+
+    </script>
     <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
     <script>
         function login() {
             var username = document.getElementById("u").value;
             var password = document.getElementById("p").value;
             $(function(){
-                var list = {"username":username,"password":password};
+                var list = {"name":username,"password":password};
                 $.ajax({
                     type : "POST",
                     contentType: "application/json;charset=UTF-8",
-                    url : "/login",
+                    url : proxy+"/login",
                     data : JSON.stringify(list),
                     success : function(result) {
-                        if (result.status === 0){
+                        if (result.code === 0){
                             location.href = "manager.html"
+                        } else {
+                            alert("error:"+result.error);
                         }
                     },
                     //请求失败，包含具体的错误信息
                     error : function(e){
-                        alert("error:"+e.status)
+                        alert("error:"+e.status);
                         console.log(e.status);
                         console.log(e.responseText);
                     }

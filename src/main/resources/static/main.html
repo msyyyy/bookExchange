@@ -15,6 +15,10 @@
             height:1200px;
             float: left;
         }
+        #show {
+            width: 100%;
+            height: 1200px;
+        }
         .head-image {
             height: 320px;
         }
@@ -34,18 +38,23 @@
             font-size: 18px;
         }
     </style>
+    <script>
+        function target(add) {
+            document.getElementById("show").src = add + ".html"
+        }
+    </script>
 </head>
 <body>
 <div class="left-menu">
     <div class="head-image">
     </div>
-    <div class="menu-item">个人信息</div>
-    <div class="menu-item">用户管理</div>
-    <div class="menu-item">图书管理</div>
-    <div class="menu-item">图书</div>
+    <div class="menu-item" onclick="target('user-info')">个人信息</div>
+    <div class="menu-item" onclick="target('user-manage')">用户管理</div>
+    <div class="menu-item" onclick="target('book-manage')">图书管理</div>
+    <div class="menu-item" onclick="target('book')">图书</div>
 </div>
 <div class="right-show">
-<iframe src="usermanage.html"></iframe>
+<iframe src="default.html" id="show"></iframe>
 </div>
 </body>
 </html>

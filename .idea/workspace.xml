@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78359d01-b383-456f-b9c0-c865ee140cb6" name="Default Changelist" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/usermanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/082130f1-eedc-4728-8db9-c26c10b61cdc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/082130f1-eedc-4728-8db9-c26c10b61cdc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/book-manage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/default.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user-info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/usermanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user-manage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -596,7 +599,8 @@
       <workItem from="1579601860680" duration="2945000" />
       <workItem from="1579606400729" duration="75000" />
       <workItem from="1579669623535" duration="7154000" />
-      <workItem from="1585570238752" duration="1775000" />
+      <workItem from="1585570238752" duration="3756000" />
+      <workItem from="1585704704864" duration="2025000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1579676518740</created>
@@ -610,6 +614,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add" />
@@ -696,19 +710,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1579674721154" />
-    <state x="422" y="217" key="com.intellij.ide.util.TipDialog" timestamp="1585570259287">
+    <state x="422" y="217" key="com.intellij.ide.util.TipDialog" timestamp="1585704701598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="375" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579606412173" />
-    <state x="422" y="217" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585570259287" />
+    <state x="422" y="217" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585704701598" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1579676663186">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1579676663186" />
-    <state x="346" y="49" key="search.everywhere.popup" timestamp="1579580159147">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="389" y="55" width="672" height="678" key="search.everywhere.popup" timestamp="1585706462910">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1579580159147" />
+    <state x="389" y="55" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585706462910" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
         .left-menu {
-            width: 30%;
+            width: 20%;
             background: #4e555b;
             float: left;
         }
+
         .right-show {
-            width: 70%;
+            width: 80%;
             background: #f1f1f1;
-            height:1200px;
+            height: 1700px;
             float: left;
         }
+
         #show {
             width: 100%;
-            height: 1200px;
+            height: 1700px;
         }
+
         .head-image {
             height: 320px;
         }
+
+        .end-image {
+            height: 320px;
+        }
+
         .menu-item:hover {
             background: #ffffff;
-            font-size:20px;
-            color:#009687;
+            font-size: 20px;
+            color: #009687;
         }
+
         .menu-item {
             margin-top: 10px;
             line-height: 70px;
             height: 70px;
-            cursor:pointer;
+            cursor: pointer;
             text-align: center;
             background: #1b1e21;
             color: white;
@@ -44,17 +54,21 @@
         }
     </script>
 </head>
+
 <body>
-<div class="left-menu">
-    <div class="head-image">
+    <div class="left-menu">
+        <div class="head-image">
+        </div>
+        <div class="menu-item" onclick="target('user-info')">个人信息</div>
+        <div class="menu-item" onclick="target('book')">图书</div>
+        <div class="menu-item" onclick="target('user-manage')">账户管理</div>
+        <div class="menu-item" onclick="target('book-manage')">图书管理</div>
+        <div class="end-image">
+        </div>
     </div>
-    <div class="menu-item" onclick="target('user-info')">个人信息</div>
-    <div class="menu-item" onclick="target('user-manage')">用户管理</div>
-    <div class="menu-item" onclick="target('book-manage')">图书管理</div>
-    <div class="menu-item" onclick="target('book')">图书</div>
-</div>
-<div class="right-show">
-<iframe src="default.html" id="show"></iframe>
-</div>
+    <div class="right-show">
+        <iframe src="aaa.html" id="show"></iframe>
+    </div>
 </body>
+
 </html>

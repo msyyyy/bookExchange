@@ -1,1 +1,0 @@
-{"timestamp":"2020-01-22T06:40:32.569+0000","status":500,"error":"Internal Server Error","message":"More than one row with the given identifier was found: 0, for class: com.yyw.bookExchange.data.User; nested exception is org.hibernate.HibernateException: More than one row with the given identifier was found: 0, for class: com.yyw.bookExchange.data.User","path":"/login/0"}

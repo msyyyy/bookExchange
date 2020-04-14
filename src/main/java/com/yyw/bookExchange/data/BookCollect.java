@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-@Table(name = "book_love")
-public class BookLove {
+@Table(name = "book_collect")
+public class BookCollect {
     @Id
     @GeneratedValue
     private long id;
@@ -22,9 +22,11 @@ public class BookLove {
     private int status;
 
     @Column
-    private long create_time;
+    private String value;
 
-    public BookLove() {
+    @Column
+    private long create_time;
+    public BookCollect() {
 
     }
 
@@ -60,22 +62,19 @@ public class BookLove {
         this.status = status;
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     public long getCreate_time() {
         return create_time;
     }
 
     public void setCreate_time(long create_time) {
         this.create_time = create_time;
-    }
-
-    @Override
-    public String toString() {
-        return "BookLove{" +
-                "id=" + id +
-                ", book_id=" + book_id +
-                ", user_id=" + user_id +
-                ", status=" + status +
-                ", create_time=" + create_time +
-                '}';
     }
 }

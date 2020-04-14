@@ -5,6 +5,7 @@ import com.yyw.bookExchange.dao.CommentDao;
 import com.yyw.bookExchange.data.ReturnWrap;
 import com.yyw.bookExchange.data.Book;
 import com.yyw.bookExchange.data.Comment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * book service
+ * book services
  * @author frank
  *
  * */
@@ -20,9 +21,11 @@ import java.util.stream.Collectors;
 @RestController
 public class CBook {
 
+
     private final BookDao bookDao;
     private final CommentDao commentDao;
 
+    @Autowired
     public CBook(BookDao dao, CommentDao cdao) {
         this.bookDao = dao;
         this.commentDao = cdao;

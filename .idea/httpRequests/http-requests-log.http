@@ -1,3 +1,9 @@
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+###
+
 GET http://localhost:8081/login
 Accept: */*
 Cache-Control: no-cache
@@ -498,16 +504,6 @@ Cache-Control: no-cache
 {"name":123,“password":"45"}
 
 <> 2020-01-22T020632-1.200.json
-
-###
-
-POST http://localhost:8081/login
-Accept: */*
-Cache-Control: no-cache
-
-{"name":123,“password":"45"}
-
-<> 2020-01-22T020632.200.json
 
 ###
 

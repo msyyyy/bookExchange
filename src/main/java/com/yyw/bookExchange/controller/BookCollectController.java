@@ -22,7 +22,6 @@ public class BookCollectController {
     @PostMapping("/save")
     public ReturnWrap<Void> getOneBookCollect(@RequestBody BookCollect bookCollect) {
         bookCollect.setCreate_time(System.currentTimeMillis());
-        System.out.println(bookCollect.toString());
         bookCollectService.saveBookCollect(bookCollect);
         return ReturnWrap.SUCCEED;
     }

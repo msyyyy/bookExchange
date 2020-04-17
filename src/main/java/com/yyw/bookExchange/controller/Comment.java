@@ -44,4 +44,12 @@ public class Comment
         dao.save(u);
         return ReturnWrap.returnWithData(u);
     }
+
+    @PutMapping("/comment/evaluate")
+    public ReturnWrap evaluate(@RequestBody com.yyw.bookExchange.data.Comment u, @RequestParam(value = "id")long id){
+        u.setId(id);
+        dao.save(u);
+        return ReturnWrap.returnWithData(u);
+    }
+
 }

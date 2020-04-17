@@ -23,6 +23,27 @@ public class Comment {
     String content;
     @Column
     String time;
+    @Column
+    private int agreeNum;
+
+    @Column
+    private int disagreeNum;
+
+    public int getAgreeNum() {
+        return agreeNum;
+    }
+
+    public void setAgreeNum(int agreeNum) {
+        this.agreeNum = agreeNum;
+    }
+
+    public int getDisagreeNum() {
+        return disagreeNum;
+    }
+
+    public void setDisagreeNum(int disagreeNum) {
+        this.disagreeNum = disagreeNum;
+    }
 
     public String getTime() {
         return time;

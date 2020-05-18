@@ -1,4 +1,4 @@
-POST http://localhost:8081/user
+POST http://42.7.245.102:8081/user
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
@@ -6,7 +6,7 @@ Content-Type: application/json
 {"name":"yyw","password":"123"}
 ###
 
-POST http://localhost:8081/login
+POST http://42.7.245.102:8081/login
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
@@ -15,38 +15,38 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:8081/user/10
+GET http://42.7.245.102:8081/user/10
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 ###
-PUT http://localhost:8081/user/10
+PUT http://42.7.245.102:8081/user/10
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"id":9,"name":"yy1","password":"123"}
 ###
-GET http://localhost:8081/users
+GET http://42.7.245.102:8081/users
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 ###
-GET http://localhost:8081/user/10/lovebook
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-###
-
-PUT http://localhost:8081/user/10/lovebook/8
+GET http://42.7.245.102:8081/user/10/lovebook
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 ###
-GET http://localhost:8081/user/10/
+
+PUT http://42.7.245.102:8081/user/10/lovebook/8
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+GET http://42.7.245.102:8081/user/10/
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json

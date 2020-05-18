@@ -1,4 +1,5 @@
-POST http://localhost:8081/book
+// 
+POST http://42.7.245.102:8081/book
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
@@ -7,7 +8,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8081/book/8
+GET http://42.7.245.102:8081/book/8
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
@@ -15,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8081/books
+GET http://42.7.245.102:8081/books
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
@@ -23,14 +24,14 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8081/book/2/loveadd
+PUT http://42.7.245.102:8081/book/2/loveadd
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
 
 ###
-GET http://localhost:8081/book/search/124
+GET http://42.7.245.102:8081/book/search/124
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json

@@ -30,7 +30,7 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8081/book/search/124
+GET http://42.7.245.102:8081/book/search/124
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json

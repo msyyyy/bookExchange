@@ -25,6 +25,17 @@ public class BookCollect {
     private String value;
 
     @Column
+    private int man;
+
+    public int getMan() {
+        return man;
+    }
+
+    public void setMan(int man) {
+        this.man = man;
+    }
+
+    @Column
     private long create_time;
     public BookCollect() {
 

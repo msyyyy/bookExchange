@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "comment")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Comment {
     @Id
     @GeneratedValue
@@ -16,12 +16,16 @@ public class Comment {
     }
 
     @Column
-    long bookId;
+    private
+    long book_id;
     @Column
-    long userId;
+    private
+    long userid;
     @Column
+    private
     String content;
     @Column
+    private
     String time;
     @Column
     private int agreeNum;
@@ -72,20 +76,20 @@ public class Comment {
         this.id = id;
     }
 
-    public long getBookId() {
-        return bookId;
+    public long getBook_id() {
+        return book_id;
     }
 
-    public void setBookId(long bookId) {
-        this.bookId = bookId;
+    public void setBook_id(long book_id) {
+        this.book_id = book_id;
     }
 
-    public long getUserId() {
-        return userId;
+    public void setUserid(long userid) {
+        this.userid = userid;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public long getUserid() {
+        return userid;
     }
 
     public String getContent() {

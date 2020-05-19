@@ -27,21 +27,21 @@ public class BookRank {
 
 
     @GetMapping("/bookrank/love")
-    public ReturnWrap<List<Book>> getLoveWithOffset(@PathParam("offset") int offset, @PathParam("length") int length){
+    public ReturnWrap<List<Book>> getLoveWithOffset(@PathParam("offset") int offset, @PathParam("length") int length) {
         List<Book> books = bookDao.findAll();
-        books.sort(Comparator.comparingInt(Book::getLove));
+        books.sort(Comparator.comparingInt(fn -> -fn.getLove()));
         return ListUtil.getByCondition(offset, length, books);
     }
 
     @GetMapping("/bookrank/notlove")
-    public ReturnWrap<List<Book>> getNotLoveWithOffset(@PathParam("offset") int offset, @PathParam("length") int length){
+    public ReturnWrap<List<Book>> getNotLoveWithOffset(@PathParam("offset") int offset, @PathParam("length") int length) {
         List<Book> books = bookDao.findAll();
-        books.sort(Comparator.comparingInt(Book::getNotLove));
+        books.sort(Comparator.comparingInt(fn -> -fn.getNotLove()));
         return ListUtil.getByCondition(offset, length, books);
     }
 
     @GetMapping("/bookrank/save")
-    public ReturnWrap<List<Book>> getSaveWithOffset(@PathParam("offset") int offset, @PathParam("length") int length){
+    public ReturnWrap<List<Book>> getSaveWithOffset(@PathParam("offset") int offset, @PathParam("length") int length) {
         List<Book> books = bookDao.findAll();
         books.sort(Comparator.comparingInt(Book::getSave));
         return ListUtil.getByCondition(offset, length, books);

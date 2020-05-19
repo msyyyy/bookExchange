@@ -99,7 +99,7 @@ public class UserBook {
     @GetMapping("/user/{id}/comment")
     public ReturnWrap GetComment(@PathVariable long id){
         List<Comment> c =  commentDao.findAll();
-        c = c.stream().filter(b -> b.getUserId() == id).collect(Collectors.toList());
+        c = c.stream().filter(b -> b.getUserid() == id).collect(Collectors.toList());
         return ReturnWrap.returnWithData(c);
     }
 

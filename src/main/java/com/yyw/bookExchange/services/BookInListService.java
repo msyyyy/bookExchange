@@ -23,6 +23,6 @@ public class BookInListService {
     }
 
     public List<BookInList> getBookInList(String list_name) {
-        return bookInListDao.findAll().stream().filter(bookInList -> bookInList.getList_name() .equals(list_name)).collect(Collectors.toList());
+        return bookInListDao.findAll().stream().filter(bookInList -> bookInList.getList_name().equals(list_name)).collect(Collectors.toList());
     }
 }

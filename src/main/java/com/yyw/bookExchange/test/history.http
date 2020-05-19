@@ -3,7 +3,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"userId": 9,"bookId": 10,"time":"15752384810"}
+{"userId": 9,"book_id": 10,"time":"15752384810"}
 
 ###
 

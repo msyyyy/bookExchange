@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class Login {
 
-    final UserDao dao;
+    private final UserDao dao;
 
     public static String newToken(){
         return "003768-a334bc-221fa";
@@ -61,6 +61,8 @@ public class Login {
 
     @PutMapping("/user/{id}")
     public ReturnWrap<Void> modify(@PathVariable Long id, @RequestBody User u){
+
+        u.setId(id);
         dao.save(u);
         return ReturnWrap.SUCCEED;
     }

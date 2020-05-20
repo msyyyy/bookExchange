@@ -1,0 +1,131 @@
+// 注册
+POST http://cloud.gnu.net.cn:8081/user
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"yyw","password":"123"}
+###
+
+// 登录
+POST http://cloud.gnu.net.cn:8081/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"yyw","password":"123"}
+### 
+
+// 用户信息获取
+GET http://cloud.gnu.net.cn:8081/user/73
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+###
+
+// 获取所有用户
+GET http://cloud.gnu.net.cn:8081/users
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+###
+
+// 增加图书
+POST http://cloud.gnu.net.cn:8081/book
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "1245","isbn":"333"}
+
+### 
+// 查看图书
+GET http://cloud.gnu.net.cn:8081/book/85
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+### 
+// 获取图书列表
+GET http://cloud.gnu.net.cn:8081/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+// 图书喜爱增加
+PUT http://cloud.gnu.net.cn:8081/book/85/loveadd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+### 
+// 图书查询，可根据ISBN号或图书名模糊搜索
+GET http://cloud.gnu.net.cn:8081/book/search/124
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+### 
+// 图书打分
+PUT http://cloud.gnu.net.cn:8081/book/85/pf/3
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+// 图书评论列表
+GET http://cloud.gnu.net.cn:8081/comments
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+// 增加图书评论
+POST http://cloud.gnu.net.cn:8081/comment
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":85,"userid":"72","content":"pp"}
+
+###
+// 查看用户评论
+GET  http://cloud.gnu.net.cn:8081/comment/105
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+// 查看图书所有评论
+GET  http://cloud.gnu.net.cn:8081/book/85/comment
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+
+###
+// 查看用户所有评论
+GET  http://cloud.gnu.net.cn:8081/user/72/comment
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+
+###
+// 增加图书收藏
+POST  http://cloud.gnu.net.cn:8081/bookcollect/save
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":85, "user_id":72}
+
+
+
+###
+// 图书排行榜
+GET  http://cloud.gnu.net.cn:8081/bookrank/love?offset=0&&length=5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json

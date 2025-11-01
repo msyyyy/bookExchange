@@ -1,2 +1,2 @@
 # bookExchange
-This is a book managing system.
+This is a book management system.
